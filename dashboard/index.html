@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Transacciones</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+  <h1>Business Expense Tracker </h1>
+        <div class="superior">
+          <label>Category:</label>
+          <select id="filtroCategoria">
+            <option value="ALL">All</option>
+          </select>
+          <label>Currency:</label>
+          <select id="monedaDestino"></select>
+          
+      </div>
+        
+
+        <div class="middle-section">
+          
+            <div class="izquierda"></div>
+            <div class="centro">
+              <table >
+                <thead>
+                  <tr>
+                    <th class="title">Descripction</th>
+                    <th class="title">Amount</th>
+                    <th class="title">Currency</th>
+                    <th class="title">Date</th>
+                    <th class="title">Category</th>
+                  </tr>
+                </thead>
+                <tbody id="tablaTransacciones"></tbody>
+              </table>
+            </div>
+            <div class="derecha"></div>
+        </div>
+        <div class="inferior">
+          <h2>Total by category</h2>
+          <div id="totalesCategoria"></div>
+        </div>
+    </div>
+
+
+
+
+
+<script type="module"  src="js/app.js"></script>
+
+</body>
+</html>

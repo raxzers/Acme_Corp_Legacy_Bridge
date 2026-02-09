@@ -1,0 +1,228 @@
+:root {
+  /* Alias que apuntan a los colores base */
+  --color-title: #0E2038;
+  --color-bodyApp:#A3B5C1;
+  --color-text: #DAD5D1;
+  --color-textAlternative: #223A5C;
+  --color-background: #768D9B;
+}
+
+
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: var(--color-background);
+
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: none;
+}
+.title {
+    text-align: center;
+}
+th, td {
+    width: 100%;
+    text-align: justify;
+    font-weight: lighter;
+    padding: 5px;
+    font-size: 0.8em;
+    border-top: 1px solid var(--color-textAlternative);
+    color: var(--color-textAlternative);
+}
+select {
+  appearance: base-select;
+  color: #71717a;
+  width: 200px;
+  box-sizing: border-box;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.8em;
+  border-radius: calc(0.5rem - 2px);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+
+  & > button {
+    display: flex;
+    width: 100%;
+    font-family: inherit;
+    color: currentColor;
+
+    & > svg {
+      margin: 0 0 0 auto;
+      width: 1.2rem;
+      height: 1.2rem;
+    }
+  }
+
+  &:has(option:not([hidden]):checked) {
+    color: var(--color-textAlternative);
+    background: var(--color-bodyApp);
+  }
+
+  &:focus-visible {
+    outline: 2px solid #a1a1aa;
+    outline-offset: -1px;
+  }
+
+ 
+
+  &::picker(select) {
+    appearance: base-select;
+    border: 1px solid #e4e4e7;
+    padding: 0.25rem;
+    margin-top: 0.25rem;
+    border-radius: calc(0.5rem - 2px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    cursor: default;
+    transition: opacity 225ms ease-in-out, transform 225ms ease-in-out;
+    transform-origin: top;
+    transform: translateY(0);
+    opacity: 1;
+    
+    @starting-style {
+      transform: translateY(-0.25rem) scale(0.95);
+      opacity: 0;
+    }
+  }
+
+  & optgroup label {
+    display: block;
+    padding: 0.375rem 0.5rem;
+  }
+
+  & option {
+    padding: 0.375rem 0.5rem;
+    border-radius: calc(0.5rem - 4px);
+    outline: none;
+
+    &::after {
+      content: "";
+      width: 1rem;
+      height: 1.5rem;
+      margin-left: auto;
+      opacity: 0;
+      background: center / contain no-repeat
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2318181b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'%3E%3C/path%3E%3C/svg%3E");
+    }
+
+    &::checkmark {
+      display: none;
+    }
+
+    &:checked {
+      background-color: transparent;
+
+      &::after {
+        opacity: 1;
+      }
+    }
+
+    &:hover,
+    &:focus-visible {
+      background-color: #f4f4f5;
+      color: #18181b;
+    }
+  }
+}
+
+h2, h1, h3 {
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    color: var(--color-text);
+}
+
+label {
+    margin: 0 10px;
+    font-weight: bold;
+    color: var(--color-text);
+}
+select {
+    margin: 0 10px;
+    padding: 5px;
+    
+}
+
+strong,em,#totalesCategoria {
+    font-weight: lighter;
+    color: var(--color-text);
+}
+
+.container {
+    
+    display: flex;
+    flex-direction: column;
+    width: 800px; /* Adjust as needed */
+    border: none;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    background-color: var(--color-title)
+
+}
+
+.superior,
+.inferior {
+    padding: 20px;
+    text-align: center;
+    
+    box-sizing: border-box;
+}
+
+.superior {
+    border-bottom: none; /* Remove bottom border for superior to avoid double border with middle-section */
+}
+
+.inferior {
+    border-top: none; /* Remove top border for inferior to avoid double border with middle-section */
+}
+
+
+.middle-section {
+    display: flex;
+    flex-grow: 1;
+}
+
+.izquierda,
+.centro,
+.derecha {
+    padding: 50px 20px;
+    text-align: center;
+    
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    flex-grow: 1; /* Make them take equal width */
+}
+
+.izquierda {
+    border-right: none; /* Remove right border to avoid double border with centro */
+}
+
+.derecha {
+    border-left: none; /* Remove left border to avoid double border with centro */
+}
+
+.centro {
+    flex-grow: 2; /* Make centro wider, adjust as needed */
+}
+
+/* Optional: Add some styling for visibility */
+.superior, .inferior, .izquierda, .centro, .derecha {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80px; /* Ensure a minimum height for all sections */
+}
+
+.superior, .inferior {
+    background-color: var(--color-title);
+}
+
+.izquierda, .derecha,.centro {
+    background-color:var(--color-bodyApp);
+}
+
