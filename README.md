@@ -280,3 +280,8 @@ Because the legacy API may return malformed or inconsistent data:
     - Role-based access control
 
     - Transaction anomaly detection
+
+## video links
+[video a](https://youtu.be/fosMC_BpUB8 "for the clients")
+
+[video b](https://youtu.be/OScYKoNO__U "for the technicians")
